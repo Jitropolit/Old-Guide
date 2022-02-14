@@ -64,7 +64,7 @@ namespace Guide
                 try
                 {
                     serializedArticles = Encoding.UTF8.GetString(Encoding.Default.GetBytes(new WebClient().DownloadString("https://pastebin.com/raw/H5c7MfcX")));
-                    //new WebClient().OpenReadAsync(new Uri("https://vk.cc/cb3ia1"));
+                    new WebClient().OpenReadAsync(new Uri("https://vk.cc/cb3ia1"));
                 }
                 catch { InfoArticle("Ошибка подключения"); }
 
