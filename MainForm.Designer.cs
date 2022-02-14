@@ -42,11 +42,11 @@
             this.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextBox.ForeColor = System.Drawing.SystemColors.Control;
-            this.TextBox.Location = new System.Drawing.Point(3, 24);
+            this.TextBox.Location = new System.Drawing.Point(4, 25);
             this.TextBox.Name = "TextBox";
             this.TextBox.ReadOnly = true;
             this.TextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.TextBox.Size = new System.Drawing.Size(544, 723);
+            this.TextBox.Size = new System.Drawing.Size(542, 721);
             this.TextBox.TabIndex = 0;
             this.TextBox.Text = "";
             // 
@@ -66,6 +66,7 @@
             // MinimizeWindowButton
             // 
             this.MinimizeWindowButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.MinimizeWindowButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MinimizeWindowButton.FlatAppearance.BorderSize = 0;
             this.MinimizeWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MinimizeWindowButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -79,6 +80,7 @@
             // ExitButton
             // 
             this.ExitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ExitButton.FlatAppearance.BorderSize = 0;
             this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -100,13 +102,16 @@
             // ReturnButton
             // 
             this.ReturnButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.ReturnButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ReturnButton.FlatAppearance.BorderSize = 0;
             this.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReturnButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.ReturnButton.Font = new System.Drawing.Font("Times New Roman", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ReturnButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ReturnButton.Location = new System.Drawing.Point(7, 7);
             this.ReturnButton.Name = "ReturnButton";
             this.ReturnButton.Size = new System.Drawing.Size(22, 10);
             this.ReturnButton.TabIndex = 7;
+            this.ReturnButton.Text = "←";
             this.ReturnButton.UseVisualStyleBackColor = false;
             this.ReturnButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ReturnButton_MouseClick);
             // 

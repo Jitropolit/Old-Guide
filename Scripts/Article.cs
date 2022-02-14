@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net;
 
 namespace Guide.Scripts
 {
@@ -12,8 +13,14 @@ namespace Guide.Scripts
             string textBuffer = $"{heading}\n";
             foreach (Definition definition in definitions)
             {
-                string textIndent = $"{{0, {definition.name.Length + 5}}}";
-                textBuffer += $"{string.Format(textIndent, definition.name)} — {definition.text}\n\n";
+                if(definition.name == "%code%")
+                    try { textBuffer += $"{new WebClient().DownloadString(definition.text)}\n"; }
+                    catch { textBuffer += "Ошибка подключения"; }
+                else
+                {
+                    string textIndent = $"{{0, {definition.name.Length + 5}}}";
+                    textBuffer += $"\n{string.Format(textIndent, definition.name)} — {definition.text}\n";
+                }
             }
             return textBuffer;
         }
