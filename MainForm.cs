@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -12,14 +13,15 @@ namespace Guide
     public partial class MainForm : Form
     {
         #region Fields
-        private Point offset;
+        private readonly string version;
         private List<Article> articles = new List<Article>();
+        private Point offset;
         #endregion
 
         public MainForm()
         {
             InitializeComponent();
-            articles = Deserialize(b&421/a&421/s&421/l&421);
+            TryLoadArticles();
             RenderArticles();
         }
 
@@ -81,23 +83,23 @@ namespace Guide
         }
         private void EditTextFormat(Article article)
         {
-            EditorTextFormat(article.heading, HorizontalAlignment.Center, FontStyle.Bold, 2);
+            EditorTextFormat(article.heading, SystemColors.Info, HorizontalAlignment.Center, FontStyle.Bold, 2);
 
             foreach (Definition definition in article.definitions)
             {
-                EditorTextFormat(definition.name, fontStyle: FontStyle.Bold);
+                EditorTextFormat(definition.name, SystemColors.Info, fontStyle: FontStyle.Bold);
             }
 
             TextBox.Select(0, 0);
         }
-        private void EditorTextFormat(string text, HorizontalAlignment textAligment = HorizontalAlignment.Left, FontStyle fontStyle = FontStyle.Regular, int fontAdditive = 0)
+        private void EditorTextFormat(string text, Color fontColor, HorizontalAlignment textAligment = HorizontalAlignment.Left, FontStyle fontStyle = FontStyle.Regular, int fontAdditive = 0)
         {
             TextBox.Select(TextBox.Text.IndexOf(text), text.Length);
             TextBox.SelectionAlignment = textAligment;
             TextBox.SelectionFont = new Font(TextBox.Font.FontFamily, TextBox.Font.Size + fontAdditive, fontStyle);
-            TextBox.SelectionColor = SystemColors.Info;
+            TextBox.SelectionColor = fontColor;
         }
-        public List<Article> Deserialize(string serializedArticleList)
+        private List<Article> Deserialize(string serializedArticleList)
         {
             var serializer = new XmlSerializer(typeof(List<Article>));
             using (var stringReader = new StringReader(serializedArticleList))
@@ -106,3 +108,4 @@ namespace Guide
         #endregion
     }
 }
+
